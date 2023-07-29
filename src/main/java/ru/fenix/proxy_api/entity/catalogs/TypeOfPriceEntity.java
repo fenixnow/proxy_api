@@ -4,11 +4,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class TypeOfPrice {
+public class TypeOfPriceEntity {
+
     @Id
     private Long id;
-    private String title;
+    private String name;
     private String priceId;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPriceId() {
+        return priceId;
+    }
+
+    public void setPriceId(String priceId) {
+        this.priceId = priceId;
+    }
 
     public void setId(Long id) {
         this.id = id;
