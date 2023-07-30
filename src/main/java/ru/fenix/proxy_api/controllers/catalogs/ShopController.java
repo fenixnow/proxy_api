@@ -1,19 +1,19 @@
-package ru.fenix.proxy_api.controller.catalogs;
+package ru.fenix.proxy_api.controllers.catalogs;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.fenix.proxy_api.entity.catalogs.ShopEntity;
-import ru.fenix.proxy_api.service.ShopService;
+import ru.fenix.proxy_api.entities.catalogs.ShopEntity;
+import ru.fenix.proxy_api.services.ShopService;
 
 @RestController
 @RequestMapping("catalogs/shops")
+@RequiredArgsConstructor
 public class ShopController {
 
-    @Autowired
-    private ShopService shopService;
+    private final ShopService shopService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity createShop(@RequestBody ShopEntity shop, @RequestHeader Integer shopNumber) {
         // Вот тут нужно проверить, что авторизация успешная, токен актуален
 
@@ -22,5 +22,10 @@ public class ShopController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("error");
         }
+    }
+
+    @PostMapping("/delete/{id}")
+    public ResponseEntity deleteShop(@PathVariable Integer id) {
+        return ResponseEntity.ok(shopService.deleteShop(id));
     }
 }

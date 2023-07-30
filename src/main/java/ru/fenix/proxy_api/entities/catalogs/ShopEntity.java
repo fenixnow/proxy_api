@@ -1,4 +1,4 @@
-package ru.fenix.proxy_api.entity.catalogs;
+package ru.fenix.proxy_api.entities.catalogs;
 
 import jakarta.persistence.*;
 
@@ -10,6 +10,7 @@ public class ShopEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(unique = true, updatable = false)
     private Integer shopNumber;
     private String code;
 

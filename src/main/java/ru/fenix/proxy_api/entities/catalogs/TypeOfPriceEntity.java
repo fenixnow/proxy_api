@@ -1,4 +1,4 @@
-package ru.fenix.proxy_api.entity.catalogs;
+package ru.fenix.proxy_api.entities.catalogs;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

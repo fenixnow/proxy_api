@@ -1,4 +1,4 @@
-package ru.fenix.proxy_api.controller;
+package ru.fenix.proxy_api.controllers;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import java.util.Map;
 public class PingController {
 
     @GetMapping
-    public ResponseEntity ping() {
+    public ResponseEntity<Object> ping() {
 
         Map<String, String> map = new HashMap<>();
         map.put("version", "0.1");

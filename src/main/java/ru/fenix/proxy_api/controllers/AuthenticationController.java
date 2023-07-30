@@ -1,10 +1,10 @@
-package ru.fenix.proxy_api.controller;
+package ru.fenix.proxy_api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.fenix.proxy_api.exception.ShopNumberNotFoundException;
-import ru.fenix.proxy_api.service.AuthenticationService;
+import ru.fenix.proxy_api.services.AuthenticationService;
 
 @RestController
 @RequestMapping("/auth")
