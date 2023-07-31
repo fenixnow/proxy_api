@@ -14,7 +14,7 @@ public class AuthenticationController {
     private AuthenticationService authenticationService;
 
     @GetMapping
-    public ResponseEntity getAuth(@RequestHeader Integer shopNumber, @RequestParam String code) {
+    public ResponseEntity getAuth(@RequestHeader Long shopNumber, @RequestParam String code) {
         try {
 
             return ResponseEntity.ok(authenticationService.auth(shopNumber, code));

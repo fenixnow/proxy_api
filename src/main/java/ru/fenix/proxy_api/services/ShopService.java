@@ -21,7 +21,12 @@ public class ShopService {
         return shopRepository.save(shop);
     }
 
-    public String deleteShop(Integer id) {
+    public ShopEntity findByNumber(Long shopNumber) {
+
+        return shopRepository.findByShopNumber(shopNumber);
+    }
+
+    public String deleteShop(Long id) {
         ShopEntity shop = shopRepository.findById(id).orElse(null);
 
         if (shop != null) {

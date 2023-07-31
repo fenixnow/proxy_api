@@ -11,7 +11,7 @@ public class ShopEntity {
     private Long id;
     private String name;
     @Column(unique = true, updatable = false)
-    private Integer shopNumber;
+    private Long shopNumber;
     private String code;
 
     public String getCode() {
@@ -40,11 +40,11 @@ public class ShopEntity {
         this.name = name;
     }
 
-    public Integer getShopNumber() {
+    public Long getShopNumber() {
         return shopNumber;
     }
 
-    public void setShopNumber(Integer shopNumber) {
+    public void setShopNumber(Long shopNumber) {
         this.shopNumber = shopNumber;
     }
 

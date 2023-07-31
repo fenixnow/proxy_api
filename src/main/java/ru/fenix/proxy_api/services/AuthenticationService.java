@@ -14,13 +14,13 @@ public class AuthenticationService {
     @Autowired
     private ShopRepository shopRepo;
 
-    public Boolean auth(Integer shopNumber, String code) throws ShopNumberNotFoundException {
+    public Boolean auth(Long shopNumber, String code) throws ShopNumberNotFoundException {
         String currentCode = getShop(shopNumber).getCode();
 
         return Objects.equals(currentCode, code);
     }
 
-    private ShopEntity getShop(Integer shopNumber) throws ShopNumberNotFoundException {
+    private ShopEntity getShop(Long shopNumber) throws ShopNumberNotFoundException {
 
         ShopEntity shop = shopRepo.findByShopNumber(shopNumber);
         if ( shop == null) {
