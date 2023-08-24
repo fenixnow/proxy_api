@@ -15,4 +15,5 @@ public class RestConfiguration implements WebMvcConfigurer {
                 .ignoreAcceptHeader(true)
                 .defaultContentType(MediaType.APPLICATION_JSON);
     }
+
 }

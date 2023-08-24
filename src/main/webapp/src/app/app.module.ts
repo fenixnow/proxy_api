@@ -3,22 +3,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ShopsComponent } from './shops/shops.component';
-import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { AuthContentComponent } from './auth-content/auth-content.component';
+import { HeaderComponent } from './header/header.component';
+import { ContentComponent } from './content/content.component';
+import {AxiosService} from "./axios.service";
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShopsComponent,
-    LoginComponent
+    AuthContentComponent,
+    HeaderComponent,
+    ContentComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    FormsModule
   ],
-  providers: [],
+  providers: [AxiosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

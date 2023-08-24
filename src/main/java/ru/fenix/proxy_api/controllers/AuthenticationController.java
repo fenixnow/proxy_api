@@ -1,19 +1,22 @@
 package ru.fenix.proxy_api.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.fenix.proxy_api.exception.ShopNumberNotFoundException;
+import ru.fenix.proxy_api.dtos.CredentialsDto;
+import ru.fenix.proxy_api.dtos.UserDto;
+import ru.fenix.proxy_api.exceptions.ShopNumberNotFoundException;
 import ru.fenix.proxy_api.services.AuthenticationService;
+import ru.fenix.proxy_api.services.UserService;
 
 @RestController
-@RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthenticationController {
 
-    @Autowired
     private AuthenticationService authenticationService;
+    private final UserService userService;
 
-    @GetMapping
+    @GetMapping("/auth")
     public ResponseEntity getAuth(@RequestHeader Long shopNumber, @RequestParam String code) {
         try {
 
@@ -24,4 +27,11 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().body("Произошла ошибка");
         }
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<UserDto> login(@RequestBody CredentialsDto credentialDto) {
+        UserDto userDto = userService.login(credentialDto);
+        return ResponseEntity.ok(userDto);
+    }
+
 }

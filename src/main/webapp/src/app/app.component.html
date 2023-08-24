@@ -1,6 +1,12 @@
-<main>
-  <header>
-    <h1>Hello my friend. This is proxy</h1>
-    <app-login></app-login>
-  </header>
-</main>
+
+<div>
+  <app-header [pageTitle]="'Авторизация JWT'" [logoSrc]="'assets/images/logo.png'" />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <app-content />
+<!--        <app-login-form></app-login-form>-->
+      </div>
+    </div>
+  </div>
+</div>

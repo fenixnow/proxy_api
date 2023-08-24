@@ -1,18 +1,18 @@
 package ru.fenix.proxy_api.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.fenix.proxy_api.entities.catalogs.ShopEntity;
-import ru.fenix.proxy_api.exception.ShopNumberNotFoundException;
+import ru.fenix.proxy_api.exceptions.ShopNumberNotFoundException;
 import ru.fenix.proxy_api.repositories.ShopRepository;
 
 import java.util.Objects;
 
 @Service
+@RequiredArgsConstructor
 public class AuthenticationService {
 
-    @Autowired
-    private ShopRepository shopRepo;
+    private final ShopRepository shopRepo;
 
     public Boolean auth(Long shopNumber, String code) throws ShopNumberNotFoundException {
         String currentCode = getShop(shopNumber).getCode();

@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.fenix.proxy_api.entities.catalogs.ShopEntity;
-import ru.fenix.proxy_api.exception.ShopAlreadyExistException;
+import ru.fenix.proxy_api.exceptions.ShopAlreadyExistException;
 import ru.fenix.proxy_api.repositories.ShopRepository;
 
 @Service

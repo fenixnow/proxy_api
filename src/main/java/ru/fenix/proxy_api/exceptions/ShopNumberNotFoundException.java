@@ -1,4 +1,4 @@
-package ru.fenix.proxy_api.exception;
+package ru.fenix.proxy_api.exceptions;
 
 public class ShopNumberNotFoundException extends Exception {
     public ShopNumberNotFoundException(String message) {
