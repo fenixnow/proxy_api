@@ -1,0 +1,15 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+  <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+    <div class="form mb-4">
+      <input type="text" id="loginName" name="login" [(ngModel)]="login" />
+      <label class="form-label" for="loginName">Логин</label>
+    </div>
+    <div class="form mb-4">
+      <input type="password" id="loginpassword" name="password" [(ngModel)]="password" />
+      <label class="form-label" for="loginpassword">Пароль</label>
+    </div>
+    <button type="submit" class="btn btn-primary m-md-4">Sing in</button>
+  </form>
+  </div>
+</div>
